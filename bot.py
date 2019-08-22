@@ -35,12 +35,12 @@ def start_handler(msg):
     bot.send_message(msg.chat.id, text=WELCOME_MESSAGE, reply_markup=keyboard, disable_web_page_preview=True)
 
 
-@bot.message_handler(regexp=f'^{ABOUT}$')
+@bot.message_handler(regexp=ABOUT)
 def help_handler(msg):
     bot.reply_to(msg, text=WELCOME_MESSAGE, disable_web_page_preview=True)
 
 
-@bot.message_handler(regexp=f'^{TOP_LINKS}$')
+@bot.message_handler(regexp=TOP_LINKS)
 def top_links_handler(msg):
     keyboard = get_top_links_keyboard()
     bot.send_message(msg.chat.id, text='choose period', reply_markup=keyboard)
